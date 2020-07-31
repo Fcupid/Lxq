@@ -1,0 +1,64 @@
+#创建dog类
+class Dog():
+    '''一次模拟小狗的简单尝试'''
+    def __init__(self,name,age):
+        '''初始化属性self和age'''
+        self.name=name
+        self.age=age
+    def sit(self):
+        '''模拟小狗命令时蹲下'''
+        print(self.name.title()+"is now sitting!")
+    def roll_over(self):
+        '''模拟小狗命令时打滚'''
+        print(self.name.title()+"roll over !")
+
+my_dog=Dog('aw',6)
+my_dog.sit()
+my_dog.roll_over()
+
+class restaurant():
+    '''设置饭店的两个属性'''
+    def __init__(self,name,type):
+        '''初始化属性name和type'''
+        restaurant.name=name
+        restaurant.type=type
+    def descripe_restaurant(self):
+        print("The name of this restaurant is "+self.name.title()+"!")
+        print("It is a "+self.type+" restaurant !")
+    def open_restaurant(self):
+        print(self.name.title()+" is openning !")
+my_restaurant=restaurant("老乡鸡","快餐店")
+my_restaurant.descripe_restaurant()
+my_restaurant.open_restaurant()
+
+#这是一个关于汽车的类
+class car():
+    def __init__(self,make,model,year):
+        self.make=make
+        self.model=model
+        self.year=year
+        self.odometer=0
+
+    def get_descriptive_name(self):
+        long_name=str(self.year)+' '+self.make+' '+self.model
+        return long_name.title()
+
+    def get_odometer(self):
+        print("this car has "+str(self.odometer)+" miles on it !")
+
+    def update_odometer(self,mileage):
+        if mileage>=self.odometer:
+            self.odometer=mileage
+        else:
+            print("不可以减小数值")
+
+    def add_miles(self,adds):
+        self.odometer+=adds
+        return self.odometer
+
+
+
+#直接使用函数
+def description_of_car(make,model,year='2020'):
+    print(make+' '+model+' '+year)
+description_of_car('bb','uuu')
