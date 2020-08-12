@@ -1,0 +1,59 @@
+#a+b+c=1000,a^2+b^2=c^2,求出a,b,c.
+#找出符合第一个条件的a,b,c值
+#1.枚举法，依次累加（复杂度为立方阶）
+import time
+begain_time=time.time()
+for a in range(0,1001):
+    for b in range(1,1001):
+        for c in range(1,1001):
+            if a+b+c==1000 and a**2+b**2==c**2:
+                print('满足要求的数有:{},{},{}'.format(a,b,c))
+
+end_time=time.time()
+print('finish')
+print('time:%s'.%(begain_time-end_time))
+#时间复杂度T=1000*1000*1000*2
+#T=O(n^3)
+
+#改进版(复杂度为平方阶)
+for a in range(0,1001):
+    for b in range (0,1001):
+        c=1000-a-b
+        if a+b+c==1000 and a**2+b**2==c**2:
+            print(f'满足要求的数有:{a},{b},{c}')
+end_time=time.time()
+print('finish')
+print('time:%s'%(end_time-begain_time))
+#T=O(n^2)
+
+#列表添加元素操作的时间复杂度比较
+from timeit import Timer
+#逐个添加添加
+def te1():
+    li=[]
+    for i in range(10000):
+        li.append(i)
+#遍历存入
+def te2():
+    li=[]
+    for i in range(10000):
+        li+=[i]
+#列表生成器
+def te3():
+    li=[i for i in range(10000)]
+#直接导入
+def te4():
+    li=[rangr(10000)]
+
+#时间测试
+timer1=Timer('te1','from __main__ import te1')
+print("逐个添加所用时间：",timer1.timeit(1000))
+
+timer2=Timer('te2','from __main__ import te2')
+print("遍历存入：",timer2.timeit(1000))
+
+timer3=Timer('te3','from __main__ import te3')
+print("使用列表生成器：",timer3.timeit(1000))
+
+timer1=Timer('te4','from __main__ import te4')
+print("直接导入：",timer1.timeit(1000))
