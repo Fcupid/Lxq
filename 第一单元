@@ -1,0 +1,71 @@
+# python温度转换实例（C=(F-32)/1.8,F=C*1.8+32）
+# str_tem=input("请输入所需温度值:")
+# if str_tem[-1] in ('F','f'):
+#     C=(eval(str_tem[0:-1])-32)/1.8
+#     print('转换后的温度是:')
+#     print(f"{C:.2f}℃")
+# if str_tem[-1] in ('C','c'):
+#     F=eval(str_tem[0:-1])*1.8+32
+#     print('转换后的温度是:')
+#     print(f'{F:.2f}F')
+# else:
+#     print('输入格式错误!')
+
+#温度转换二，要求：C或F开头，输出保证两个小数点，不存在提示字符串，不考虑输入异常
+# str_tem=input()
+# if str_tem[0] in ('C'):
+#     F=eval(str_tem[1:])*1.8+32
+#     print('转换后的温度是:')
+#     print(f'{F:.2f}F')
+# elif str_tem[0] in ('F'):
+#     C = (eval(str_tem[1:]) - 32) / 1.8
+#     print(f'转换后的温度是:{C}℃')
+
+#数字形式转换
+# '''输入正整数，输出相对应的数字'''
+# number=input("请输入阿拉伯数字:")
+# d={'0':'零','1':'一','2':'二','3':'三','4':'四','5':'五','6':'六','7':'七','8':'八','9':'九'}
+# for i in number[:]:
+#     print(d[i],end="")
+
+#货币转换（1美元=6.78人民币）
+# Str_Num=input('请输入想要转换的金额（RMB或者USD）：')
+# if Str_Num[:3]=='RMB':
+#     USD=eval(Str_Num[3:])/6.78
+#     print(f'USD{USD:2f}')
+# elif Str_Num[:3]=='USD':
+#     RMB=eval(Str_Num[3:])*6.78
+#     print(f'RMB{RMB:2f}')
+
+#Python蟒蛇绘制
+# import turtle as t
+# #基础参数设置
+# t.setup(850,800)
+# t.pencolor('pink')
+# t.pensize(10)
+# #初始位置定义
+# t.penup()
+# t.bk(100)
+# t.pendown()
+# #利用循环遍历机制绘制四段曲线
+# t.seth(-40)
+# for i in range(3):#遍历从0-2
+#     t.circle(40,80)
+#     t.circle(-40,80)
+# t.circle(40,40)
+# t.fd(30)
+# t.circle(40,180)
+# t.fd(30)
+# t.penup()
+# t.done()
+
+#叠边型的绘制
+import turtle as t
+t.penup()
+t.bk(100)
+t.pendown()
+for i in range(9):
+    t.fd(100)
+    t.left(80)
+t.done()
+
