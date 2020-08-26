@@ -1,0 +1,113 @@
+#用Python中的顺序表实现栈
+'''支持的操作有'''
+#stack()创建一个新的空栈
+#push(item)添加一个新栈到栈顶
+#pop()弹出栈顶元素
+#peek()返回栈顶元素，仍保留
+#is_empty()判断栈是否为空
+#size()返回栈的元素个数
+# class Stack(object):
+#     def __init__(self):
+#         self.__list=[]
+#     def stack(self):
+#         '''创建一个新的空栈'''
+#         pass
+#
+#     def push(self,item):
+#         '''添加一个新栈到栈顶'''
+#         self.__list.append(item)
+#
+#     def pop(self):
+#         '''弹出栈顶元素'''
+#         return self.__list.pop()
+#
+#     def peek(self):
+#         '''返回栈顶元素，仍保留'''
+#         if self.__list:
+#             return self.__list[-1]
+#         else:
+#             return 0
+#
+#     def is_empty(self):
+#         '''判断栈是否为空'''
+#         return self.__list==[]
+#
+#     def size(self):
+#         '''返回栈的元素个数'''
+#         return len(self.__list)
+#
+# if __name__=="__main__":
+#     s=Stack()
+#     s.push(1)
+#     s.push(2)
+#     s.push(3)
+#     print(s.size())
+#     print(s.pop())
+#     print(s.pop())
+
+#定义队列peek
+class Queue(object):
+    def __init__(self):
+        self.__list=[]
+
+    def is_empty(self):
+        return self.__list==[]
+
+    def enqueue(self,item):
+        '''从一端插入'''
+        return self.__list.append(item)
+
+    def dequeue(self):
+        if self.__list:
+            return self.__list.pop(0)
+        else:
+            return 0
+
+    def len(self):
+        return len(self.__list)
+
+if __name__ == "__main__":
+    q=Queue()
+    q.enqueue(1)
+    q.enqueue(2)
+    q.enqueue(3)
+    q.len()
+    print(q.len())
+    print(q.dequeue())
+    print(q.enqueue(3))
+
+
+#双端队列
+# class DoubleQueue(object):
+#     def __init__(self):
+#         self.__list=[]
+#
+#     # def is_empty(self):
+#     #     return self.__list==[]
+#
+#
+#     def in_t(self,item):
+#         '''从一端插入'''
+#         self.__list.insert(0,item)
+#
+#     def out_head(self):
+#         if self.__list:
+#             return self.__list.pop(0)
+#
+#     def in_rear(self,item):
+#         return self.__list.insert(-1,item)
+#
+#     def out_end(self):
+#         return self.__list.pop()
+#
+#     def len(self):
+#         return len(self.__list)
+#
+# if __name__=='__main__':
+#     ppp=DoubleQueue()
+#     ppp.in_t(5)
+#     print(ppp)
+#     ppp.in_head(2)
+#     print(ppp.in_head(100))
+#     print(ppp.len())
+
